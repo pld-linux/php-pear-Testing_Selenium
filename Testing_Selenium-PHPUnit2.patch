@@ -1,0 +1,72 @@
+diff -uNr Testing_Selenium-0.3.1.old/usr/share/pear/tests/Testing_Selenium/tests/AllTests.php Testing_Selenium-0.3.1.new/usr/share/pear/tests/Testing_Selenium/tests/AllTests.php
+--- Testing_Selenium-0.3.1.old/usr/share/pear/tests/Testing_Selenium/tests/AllTests.php	2007-06-04 23:58:09.000000000 +0200
++++ Testing_Selenium-0.3.1.new/usr/share/pear/tests/Testing_Selenium/tests/AllTests.php	2007-06-05 00:08:13.000000000 +0200
+@@ -5,8 +5,7 @@
+     define('PHPUnit_MAIN_METHOD', 'TestSuite::main');
+ }
+  
+-require_once 'PHPUnit/Framework.php';
+-require_once 'PHPUnit/TextUI/TestRunner.php';
++require_once 'PHPUnit2/TextUI/TestRunner.php';
+ 
+ require_once 'SeleniumTest.php';
+ require_once 'GoogleTest.php';
+@@ -16,12 +15,12 @@
+ {
+     public static function main()
+     {
+-        PHPUnit_TextUI_TestRunner::run(self::suite());
++        PHPUnit2_TextUI_TestRunner::run(self::suite());
+     }
+  
+     public static function suite()
+     {
+-        $suite = new PHPUnit_Framework_TestSuite('PHPUnit Framework');
++        $suite = new PHPUnit2_Framework_TestSuite('PHPUnit Framework');
+         $suite->addTestSuite('SeleniumTest');
+         $suite->addTestSuite('GoogleTest');
+         $suite->addTestSuite('BugTest');
+diff -uNr Testing_Selenium-0.3.1.old/usr/share/pear/tests/Testing_Selenium/tests/BugTest.php Testing_Selenium-0.3.1.new/usr/share/pear/tests/Testing_Selenium/tests/BugTest.php
+--- Testing_Selenium-0.3.1.old/usr/share/pear/tests/Testing_Selenium/tests/BugTest.php	2007-06-04 23:58:09.000000000 +0200
++++ Testing_Selenium-0.3.1.new/usr/share/pear/tests/Testing_Selenium/tests/BugTest.php	2007-06-04 23:59:19.000000000 +0200
+@@ -1,8 +1,8 @@
+ <?php
+ require_once 'Testing/Selenium.php';
+-require_once 'PHPUnit/Framework/TestCase.php';
++require_once 'PHPUnit2/Framework/TestCase.php';
+ 
+-class BugTest extends PHPUnit_Framework_TestCase
++class BugTest extends PHPUnit2_Framework_TestCase
+ {
+     private $selenium;
+ 
+diff -uNr Testing_Selenium-0.3.1.old/usr/share/pear/tests/Testing_Selenium/tests/GoogleTest.php Testing_Selenium-0.3.1.new/usr/share/pear/tests/Testing_Selenium/tests/GoogleTest.php
+--- Testing_Selenium-0.3.1.old/usr/share/pear/tests/Testing_Selenium/tests/GoogleTest.php	2007-06-04 23:58:09.000000000 +0200
++++ Testing_Selenium-0.3.1.new/usr/share/pear/tests/Testing_Selenium/tests/GoogleTest.php	2007-06-04 23:59:19.000000000 +0200
+@@ -2,9 +2,9 @@
+ 
+ set_include_path(get_include_path() . PATH_SEPARATOR . './PEAR/');
+ require_once 'Testing/Selenium.php';
+-require_once 'PHPUnit/Framework/TestCase.php';
++require_once 'PHPUnit2/Framework/TestCase.php';
+ 
+-class GoogleTest extends PHPUnit_Framework_TestCase
++class GoogleTest extends PHPUnit2_Framework_TestCase
+ {
+     private $selenium;
+ 
+diff -uNr Testing_Selenium-0.3.1.old/usr/share/pear/tests/Testing_Selenium/tests/SeleniumTest.php Testing_Selenium-0.3.1.new/usr/share/pear/tests/Testing_Selenium/tests/SeleniumTest.php
+--- Testing_Selenium-0.3.1.old/usr/share/pear/tests/Testing_Selenium/tests/SeleniumTest.php	2007-06-04 23:58:09.000000000 +0200
++++ Testing_Selenium-0.3.1.new/usr/share/pear/tests/Testing_Selenium/tests/SeleniumTest.php	2007-06-04 23:59:19.000000000 +0200
+@@ -6,9 +6,9 @@
+ //error_reporting(E_ALL|E_STRICT);
+ set_include_path(get_include_path() . PATH_SEPARATOR . './PEAR/');
+ require_once 'Testing/Selenium.php';
+-require_once 'PHPUnit/Framework/TestCase.php';
++require_once 'PHPUnit2/Framework/TestCase.php';
+ 
+-class SeleniumTest extends PHPUnit_Framework_TestCase
++class SeleniumTest extends PHPUnit2_Framework_TestCase
+ {
+     private $selenium;
+ 
