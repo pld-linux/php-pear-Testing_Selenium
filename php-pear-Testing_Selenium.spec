@@ -8,11 +8,12 @@ Summary:	%{_pearname} - PHP Client for the Selenium Remote Control test tool
 Summary(pl):	%{_pearname} - Klient PHP dla narzędzia Selenium Remote Control
 Name:		php-pear-%{_pearname}
 Version:	0.3.1
-Release:	0.9
+Release:	1.0
 License:	Apache License, Version 2.0
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	9b07398a3b34aba258b981908d1ab2a8
+Patch0:		%{_pearname}-PHPUnit2.patch
 URL:		http://pear.php.net/package/%{_pearname}/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -33,7 +34,10 @@ Server communicates directly with the browser using AJAX.
 In PEAR status of this package is: %{_status}.
 
 %description -l pl
-
+Selenium Remote Control (SRC) to narzędzie umożliwiające pisanie
+automatycznych testów aplikacji internetowych na poziomie interfejsu
+użytkownika. Umożliwia testowanie za pomocę większości przeglądarek
+obsługujących JavaScript.
 
 Ta klasa ma w PEAR status: %{_status}.
 
@@ -53,6 +57,7 @@ Testy dla PEAR::%{_pearname}.
 
 %prep
 %pear_package_setup
+%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
