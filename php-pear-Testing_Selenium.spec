@@ -33,7 +33,7 @@ Server communicates directly with the browser using AJAX.
 
 In PEAR status of this package is: %{_status}.
 
-%description -l pl
+%description -l pl.UTF-8
 Selenium Remote Control (SRC) to narzędzie umożliwiające pisanie
 automatycznych testów aplikacji internetowych na poziomie interfejsu
 użytkownika. Umożliwia testowanie za pomocę większości przeglądarek
