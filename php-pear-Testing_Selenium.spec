@@ -5,7 +5,7 @@
 %define		_pearname	%{_class}_%{_subclass}
 
 Summary:	%{_pearname} - PHP Client for the Selenium Remote Control test tool
-Summary(pl):	%{_pearname} - Klient PHP dla narzędzia Selenium Remote Control
+Summary(pl.UTF-8):	%{_pearname} - Klient PHP dla narzędzia Selenium Remote Control
 Name:		php-pear-%{_pearname}
 Version:	0.3.1
 Release:	1.0
