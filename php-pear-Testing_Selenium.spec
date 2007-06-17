@@ -14,7 +14,7 @@ Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	9b07398a3b34aba258b981908d1ab2a8
 Patch0:		%{_pearname}-PHPUnit2.patch
-URL:		http://pear.php.net/package/%{_pearname}/
+URL:		http://pear.php.net/package/Testing_Selenium/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.300
@@ -36,8 +36,13 @@ In PEAR status of this package is: %{_status}.
 %description -l pl.UTF-8
 Selenium Remote Control (SRC) to narzędzie umożliwiające pisanie
 automatycznych testów aplikacji internetowych na poziomie interfejsu
-użytkownika. Umożliwia testowanie za pomocę większości przeglądarek
-obsługujących JavaScript.
+użytkownika. Umożliwia testowanie za pomocą większości przeglądarek
+obsługujących JavaScript. SRC udostępnia Selenium Server,
+automatycznie uruchamiający/wstrzymujący/sterujący dowolną obsługiwaną
+przeglądarką. Działa za pomocą Selenium Core - biblioteki w czystym
+HTML-u i JavaScripcie wykonującej zautomatyzowane zadania w
+JavaScripcie; Selenium Server komunikuje się bezpośrednio z
+przeglądarką poprzez AJAX.
 
 Ta klasa ma w PEAR status: %{_status}.
 
@@ -45,7 +50,7 @@ Ta klasa ma w PEAR status: %{_status}.
 Summary:	Tests for PEAR::%{_pearname}
 Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 AutoReq:	no
 AutoProv:	no
 
@@ -72,9 +77,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc install.log
 %{php_pear_dir}/.registry/*.reg
-%{php_pear_dir}/%{_class}/*.php
-%{php_pear_dir}/%{_class}/%{_subclass}.php
-%{php_pear_dir}/%{_class}/%{_subclass}
+%{php_pear_dir}/Testing/*.php
+%{php_pear_dir}/Testing/Selenium.php
+%{php_pear_dir}/Testing/Selenium
 
 %files tests
 %defattr(644,root,root,755)
