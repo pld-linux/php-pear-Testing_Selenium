@@ -8,7 +8,7 @@ Summary:	%{_pearname} - PHP Client for the Selenium Remote Control test tool
 Summary(pl.UTF-8):	%{_pearname} - Klient PHP dla narzędzia Selenium Remote Control
 Name:		php-pear-%{_pearname}
 Version:	0.4.2
-Release:	1
+Release:	2
 License:	Apache License, Version 2.0
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
