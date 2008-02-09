@@ -9,7 +9,7 @@ Summary(pl.UTF-8):	%{_pearname} - Klient PHP dla narzędzia Selenium Remote Cont
 Name:		php-pear-%{_pearname}
 Version:	0.4.2
 Release:	2
-License:	Apache License, Version 2.0
+License:	Apache v2.0
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	4bbb5e2a2e3d3ac486f79c1dec60a0ba
