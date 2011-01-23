@@ -19,6 +19,7 @@ BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	php-pear
+Obsoletes:	php-pear-Testing_Selenium-tests
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -46,20 +47,6 @@ przeglądarką poprzez AJAX.
 
 Ta klasa ma w PEAR status: %{_status}.
 
-%package tests
-Summary:	Tests for PEAR::%{_pearname}
-Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
-Group:		Development/Languages/PHP
-Requires:	%{name} = %{version}-%{release}
-AutoReq:	no
-AutoProv:	no
-
-%description tests
-Tests for PEAR::%{_pearname}.
-
-%description tests -l pl.UTF-8
-Testy dla PEAR::%{_pearname}.
-
 %prep
 %pear_package_setup
 %patch0 -p1
@@ -81,7 +68,3 @@ rm -rf $RPM_BUILD_ROOT
 %{php_pear_dir}/Testing/*.php
 %{php_pear_dir}/Testing/Selenium.php
 %{php_pear_dir}/Testing/Selenium
-
-%files tests
-%defattr(644,root,root,755)
-%{php_pear_dir}/tests/*
