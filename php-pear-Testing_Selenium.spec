@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.php
 %define		_class		Testing
 %define		_subclass	Selenium
 %define		_status		beta
